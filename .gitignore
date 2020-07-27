@@ -1,0 +1,6 @@
+/bower_components/
+/node_modules/
+*/fonts/
+*/css/
+.htaccess
+package-lock.json

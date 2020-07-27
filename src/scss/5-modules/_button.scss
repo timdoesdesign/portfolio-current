@@ -1,0 +1,87 @@
+.btn {
+  display: block;
+  border: 2px solid $primary;
+  border-radius: 3px;
+  padding: .8em;
+  text-align: center;
+
+  &--projects {
+    @extend .btn;
+    max-width: 250px;
+    background-color: $accent;
+    color: $black;
+    transition: $ease-in-out;
+
+    @include screen-lg {
+      max-width: 500px;
+    }
+
+    &:hover {
+      background-color: $primary-light;
+    }
+  }
+
+  &--contact {
+    @extend .btn--projects;
+    background-color: $white;
+  }
+
+  &--resume {
+    @extend .btn--contact;
+    margin: auto;
+  }
+
+  &--visit {
+    @extend .btn;
+    display: inline-block;
+    background-color: $white;
+    color: $primary;
+    border-radius: 0;
+    border: none;
+    border-bottom: 2px solid $primary;
+    padding-top: 0;
+    padding-bottom: 0;
+    position: relative;
+
+    &:after,
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: $primary;
+      transition: all 0.3s ease;
+      transform: scale(0.85);
+    }
+
+    &:hover:before {
+      top: -5px;
+      transform: scale(1);
+    }
+
+    &:hover:after {
+      transform: scale(1);
+    }
+  }
+
+  &--submit {
+    @extend .btn;
+    background-color: $primary;
+    color: $white;
+
+    cursor: pointer;
+    width: 100%;
+    margin-top: .25rem;
+    padding-top: .5em;
+    padding-bottom: .5em;
+    transition: $ease-in-out;
+
+    &:hover {
+      background-color: $white;
+      color: $black;
+    }
+  }
+}

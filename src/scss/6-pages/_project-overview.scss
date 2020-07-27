@@ -1,0 +1,101 @@
+.project {
+
+  &__container {
+    max-width: 70rem;
+    margin: auto;
+    padding: 1rem;
+    @include h-responsive-padding;
+  }
+
+
+  &__link--back {
+    display: inline-block;
+    color: $primary-dark;
+    margin: 1rem 0;
+    transition: $ease-in-out;
+    position: relative;
+
+    &:before,
+    &:after {
+      @include underline;
+      background-color: $primary-dark;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      opacity: 1;
+    }
+
+    &:hover {
+
+      &:before,
+      &:after {
+        width: 0;
+        opacity: 0;
+      }
+    }
+  }
+
+  &__text {
+    margin: 1rem auto 2rem;
+    line-height: 1.75;
+    max-width: 655px;
+  }
+
+  &__view-page {
+    text-align: center;
+    font-size: 1.25em;
+  }
+}
+
+.gallery {
+  &__wrapper {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    column-gap: 2rem;
+    row-gap: 2rem;
+    margin: 3rem 0 1rem;
+
+    @include IE {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &__mobile,
+  &__tablet,
+  &__desktop {
+    grid-column: 1 / 9;
+  }
+
+  &__mobile {
+    @include screen-md {
+      grid-column: 1 / span 4;
+      grid-row: 1;
+    }
+
+    @include screen-xl {
+      grid-column: 2 / span 3;
+    }
+  }
+
+  &__tablet {
+    @include screen-md {
+      grid-column: 5 / span 4;
+      grid-row: 1;
+    }
+
+    @include screen-xl {
+      grid-column: 5 / span 3;
+    }
+  }
+
+  &__desktop {
+    @include screen-md {
+      grid-column: 1 / 9;
+    }
+
+    @include screen-xl {
+      grid-column: 2 / 8;
+    }
+  }
+}

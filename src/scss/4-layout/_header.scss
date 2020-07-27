@@ -1,0 +1,61 @@
+/*******************
+Header
+*******************/
+.header {
+  background-color: $primary;
+  z-index: 999;
+
+  @include screen-sm {
+    position: fixed;
+    width: 100%;
+  }
+
+  &__container {
+    display: grid;
+    grid-template-columns: auto repeat(2, 1fr);
+    align-items: center;
+    padding: .5rem 1rem;
+
+    @include IE {
+      display: -ms-flexbox;
+      justify-content: space-between;
+    }
+
+    @include screen-sm {
+      column-gap: 2rem;
+    }
+
+    @include h-responsive-padding;
+  }
+}
+
+.logo {
+  align-self: center;
+
+  svg {
+    fill: $white;
+  }
+}
+
+/*******************
+Social media icons
+*******************/
+.social__list {
+  grid-column: 3;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.social__item {
+  margin-left: 1.5rem;
+}
+
+.social__icon {
+  color: $white;
+  transition: $ease-in-out;
+
+  &:hover {
+    color: $primary-light;
+    transform: scale(1.25);
+  }
+}

@@ -1,0 +1,15 @@
+.avatar {
+  width: 8rem;
+  height: 8rem;
+  overflow: hidden;
+  border-radius: 50%;
+  margin: 1.5rem auto;
+
+  @include screen-lg {
+    width: 9rem;
+    height: 9rem;
+    float: left;
+    margin-right: 3rem;
+    margin-bottom: 2rem;
+  }
+}

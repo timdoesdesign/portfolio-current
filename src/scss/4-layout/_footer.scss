@@ -1,0 +1,74 @@
+.footer {
+  background-color: $primary-grey;
+  color: $white;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    @include padding($top: 2rem, $bottom: 4rem);
+
+    @include screen-sm {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 2rem 1rem;
+    }
+
+    @include h-responsive-padding;
+  }
+
+  &__copyright {
+
+    @include screen-sm {
+      order: -1;
+    }
+  }
+
+  // Social media text
+  &__social-list {
+    display: flex;
+    justify-content: space-evenly;
+    position: relative;
+    margin-bottom: 2rem;
+
+    @include IE {
+      justify-content: space-around;
+    }
+
+    @include screen-sm {
+      margin-bottom: 0;
+    }
+  }
+
+  &__social-item {
+    transition: $ease-in-out;
+    position: relative;
+
+    &:before,
+    &:after {
+      @include underline;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      opacity: 1;
+    }
+
+    &:hover {
+
+      &:before,
+      &:after {
+        width: 0;
+        opacity: 0;
+      }
+    }
+
+    @include screen-sm {
+      margin-left: 2rem;
+    }
+  }
+
+  &__social-text {
+    color: $white;
+  }
+}

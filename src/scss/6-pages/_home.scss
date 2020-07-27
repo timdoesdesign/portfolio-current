@@ -1,0 +1,244 @@
+/*----------------------------
+  Intro section
+----------------------------*/
+.intro {
+  //  height: calc(100vh - 96px);
+  background-image: url(../images/landing-section.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: right;
+
+  @include IE {
+    background-attachment: scroll !important;
+  }
+
+  @include screen-md {
+    background-position: bottom;
+  }
+
+  @include screen-lg {
+    min-height: 80vh;
+  }
+
+  @include screen-xl {
+    background-attachment: fixed;
+  }
+
+  &__wrapper {
+    display: grid;
+    grid-template-rows: 1fr auto;
+    row-gap: 4rem;
+    padding: 1rem 1rem 2rem;
+    @include h-responsive-padding;
+
+    @include IE {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      background-attachment: scroll !important;
+    }
+
+    @include screen-lg {
+      row-gap: 6rem;
+    }
+  }
+
+  &__btn-wrapper {
+
+    .btn {
+      margin: 0 auto 2rem;
+
+      @include screen-sm {
+        margin: 0 0 2rem 0;
+      }
+    }
+
+    @include IE {
+      margin-top: 8rem;
+    }
+  }
+}
+
+.section__title--intro {
+  text-align: left;
+  margin: 0;
+
+  br {
+    display: none;
+
+    @include screen-sm {
+      display: block;
+    }
+  }
+
+}
+
+/*----------------------------
+  Service section
+----------------------------*/
+.my-services {
+  background-color: $primary-light-bg;
+}
+
+.services__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  @include h-responsive-padding;
+}
+
+.section__title--services {
+  margin: 1rem 0;
+}
+
+.services__wrapper {
+  display: flex;
+  flex-direction: column;
+  max-width: 1040px;
+  margin: 1rem 0 3rem;
+
+  @include screen-lg {
+    flex-direction: row;
+    margin-bottom: 6rem;
+  }
+}
+
+.service + .service {
+  @include screen-lg {
+    margin-left: 3rem;
+  }
+}
+
+.service {
+  margin-bottom: 3rem;
+  max-width: 400px;
+
+  @include screen-lg {
+    margin-bottom: 0;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  h3 {
+    text-align: center;
+    margin: 1rem;
+  }
+}
+
+.service__icon {
+  color: $primary-dark;
+}
+
+
+/*----------------------------
+  About section
+----------------------------*/
+@mixin inset-shadow {
+  box-shadow: inset 0 0 5px black;
+}
+
+.about {
+  background-color: lighten($primary, 5%);
+  color: $white;
+  @include inset-shadow;
+  @include padding($top: 2rem, $bottom: 2rem);
+
+  &__container {
+    background-color: $primary-dark;
+    padding: 1rem;
+    @include inset-shadow;
+    @include h-responsive-padding;
+  }
+
+  &__wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  &__text {
+    line-height: 1.75;
+    margin-bottom: 3rem;
+  }
+}
+
+.section__title--about {
+  margin: 1rem 0;
+  text-align: center;
+}
+
+
+
+/*----------------------------
+  Skills section
+----------------------------*/
+.skills__container {
+  padding: 0 1rem;
+  max-width: 584px;
+  margin: auto;
+
+  @include screen-lg {
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 3rem;
+    @include h-responsive-padding;
+    padding-bottom: 3rem;
+  }
+
+  @include IE {
+    max-width: 900px !important;
+    margin: auto;
+  }
+}
+
+.section__title--skills {
+  text-align: center;
+  margin: 2rem 0;
+  grid-column: span 2;
+}
+
+.skills__illustration {
+  grid-row: 2;
+  grid-column: 2;
+  align-self: center;
+
+  svg {
+    .st0 {
+      fill: $primary-dark;
+    }
+
+    .st1 {
+      fill: $primary-light;
+    }
+
+    .st2 {
+      fill: $primary-grey;
+      opacity: .3;
+    }
+  }
+}
+
+.skill__wrapper {
+  margin-bottom: 2rem;
+}
+
+.skill__list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(1.5rem, 6.5rem));
+  grid-gap: .5rem .5rem;
+  margin-top: .25rem;
+
+  @include IE {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+
+  @include screen-lg {
+    grid-column: 2;
+  }
+}

@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
+
+// General
+body {
+  font-family: 'Nunito', sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  color: $black;
+
+  @include screen-md {
+    font-size: 1.25rem;
+  }
+}
+
+h3 {
+  font-size: 1.25rem;
+
+  @include screen-md {
+    font-size: 1.563rem;
+  }
+}
+
+strong {
+  color: $primary-dark;
+}
+
+// Header
+.nav__item {
+  font-size: 0.9rem;
+}
+
+.social__icon {
+  font-size: 1.5rem;
+}
+
+
+// Main
+.section__title {
+  font-size: 1.953rem;
+  font-weight: 400;
+
+  @include screen-lg {
+    font-size: 2.441rem;
+  }
+
+  &--intro {
+    font-size: 1.563rem;
+    font-weight: 400;
+
+    @include screen-sm {
+      font-size: 1.953rem;
+    }
+
+    @include screen-lg {
+      font-size: 3.052rem;
+    }
+  }
+}
+
+.btn--projects {
+  @include screen-lg {
+    font-size: 1.563rem;
+  }
+}
+
+.skill__list {
+  font-size: .9rem;
+
+  @include screen-md {
+    font-size: 1rem;
+  }
+}
+
+.service__icon {
+  font-size: 3rem;
+}
+
+.project__title {
+  font-size: 1.25rem;
+
+  @include screen-sm {
+    font-size: 1.953rem;
+  }
+
+  @include screen-lg {
+    font-size: 3.052rem;
+  }
+}
+
+.project__link--back {
+  font-size: .8rem;
+}
+
+// Footer
+.footer__container {
+  font-size: .9rem;
+}

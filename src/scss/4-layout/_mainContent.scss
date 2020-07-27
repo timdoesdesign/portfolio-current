@@ -1,0 +1,25 @@
+main {
+
+  @include screen-sm {
+    padding-top: 3.7rem;
+  }
+}
+
+.section__title {
+  @include margin($top: 1rem, $bottom: 1rem);
+}
+
+.article__wrapper {
+  margin: auto;
+  padding: 1rem;
+  max-width: 800px;
+  @include h-responsive-padding;
+
+  @include screen-lg {
+    @include padding($left: 0, $right: 0);
+  }
+
+  @include screen-xl {
+    @include padding($left: 0, $right: 0);
+  }
+}

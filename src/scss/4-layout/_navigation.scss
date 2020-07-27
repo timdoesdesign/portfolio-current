@@ -1,0 +1,93 @@
+/*********************
+Navigation
+*********************/
+.nav {
+
+  &__wrapper {
+    display: block;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 999;
+
+    @include IE {
+      flex-grow: 2;
+    }
+
+    @include screen-sm {
+      position: static;
+      grid-column: 2;
+      max-width: 18.75rem;
+    }
+  }
+
+
+  &__list {
+    display: grid;
+    width: 100vw;
+    grid-template-columns: repeat(3, 1fr);
+    background-color: $primary;
+
+    @include IE {
+      display: flex;
+      justify-content: flex-start;
+    }
+
+    @include screen-sm {
+      column-gap: 1rem;
+      width: inherit;
+    }
+  }
+
+
+  &__item {
+
+    @include screen-sm {
+      position: relative;
+
+      &:before,
+      &:after {
+        @include underline;
+        width: 0px;
+        height: 4px;
+        opacity: 0;
+      }
+
+      &:hover {
+
+        &:before,
+        &:after {
+          width: 100%;
+          opacity: 1;
+        }
+      }
+    }
+
+    &--active {
+      background-color: $primary-dark;
+      pointer-events: none;
+
+      @include screen-sm {
+        background-color: inherit;
+
+        &:before,
+        &:after {
+          width: 100%;
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+
+  &__link {
+    color: $white;
+    display: block;
+    text-align: center;
+    padding: .8rem;
+
+    @include screen-sm {
+      padding-bottom: .5rem;
+    }
+  }
+}

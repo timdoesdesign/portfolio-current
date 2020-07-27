@@ -1,0 +1,67 @@
+// Breakpoints
+@mixin screen-xs { @media (min-width: #{$screen-xs-min}) {@content;} } // Tiny devices
+@mixin screen-sm { @media (min-width: #{$screen-sm-min}) {@content;} } // Small devices
+@mixin screen-md { @media (min-width: #{$screen-md-min}) {@content;} } // Medium devices
+@mixin screen-lg { @media (min-width: #{$screen-lg-min}) {@content;} } // Large devices
+@mixin screen-xl { @media (min-width: #{$screen-xl-min}) {@content;} } // Extra large devices
+
+@mixin screen-xs-max { @media (max-width: #{$screen-xs-min}) {@content;} } // Tiny devices
+
+// Padding
+@mixin padding($top: null, $right: null, $bottom: null, $left: null){
+  padding-top: $top;
+  padding-right: $right;
+  padding-bottom: $bottom;
+  padding-left: $left;
+}
+
+// Margin
+@mixin margin($top: null, $right: null, $bottom: null, $left: null){
+  margin-top: $top;
+  margin-right: $right;
+  margin-bottom: $bottom;
+  margin-left: $left;
+}
+
+// Colors for skill items
+@mixin skill($name, $bg-color, $font-color: white) {
+  .#{$name} {
+    background-color: $bg-color;
+    color: $font-color;
+  }
+}
+
+// Stying for IE 10+
+@mixin IE {
+  @media all and (-ms-high-contrast: none),
+  (-ms-high-contrast: active) {
+    @content
+  }
+}
+
+// Hover effect on text links
+@mixin underline {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 0;
+  height: 4px;
+  transition: $ease-in-out;
+  transition-duration: .25s;
+  opacity: 0;
+  background-color: $primary-light;
+}
+
+@mixin h-responsive-padding {
+  @include screen-md {
+      @include padding($left: 2rem, $right: 2rem)
+    }
+
+    @include screen-lg {
+      @include padding($left: 3rem, $right: 3rem)
+    }
+
+    @include screen-xl {
+      @include padding($left: 4rem, $right: 4rem)
+    }
+}
