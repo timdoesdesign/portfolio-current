@@ -88,7 +88,10 @@ strong {
 }
 
 .project__link--back {
-  font-size: .8rem;
+  font-size: .9rem;
+  @include screen-lg {
+    font-size: 1rem;
+  }
 }
 
 // Footer
