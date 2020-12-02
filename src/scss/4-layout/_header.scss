@@ -1,61 +1,148 @@
-/*******************
-Header
-*******************/
-.header {
+header {
   background-color: $primary;
-  z-index: 999;
 
-  @include screen-sm {
-    position: fixed;
-    width: 100%;
-  }
-
-  &__container {
-    display: grid;
-    grid-template-columns: auto repeat(2, 1fr);
-    align-items: center;
-    padding: .5rem 1rem;
-
-    @include IE {
-      display: -ms-flexbox;
-      justify-content: space-between;
-    }
-
-    @include screen-sm {
-      column-gap: 2rem;
-    }
-
-    @include h-responsive-padding;
+  @include media-breakpoint-up(md) {
+    @include nav-shadow;
   }
 }
 
-.logo {
-  align-self: center;
-
-  svg {
-    fill: $white;
+.fixed-top {
+  @include media-breakpoint-down(sm) {
+    position: static;
   }
 }
 
 /*******************
-Social media icons
+Navigation
 *******************/
-.social__list {
-  grid-column: 3;
+
+.navbar {
+  background-color: $body-bg;
+  color: $white;
+  padding-top: 0;
+  padding-bottom: 0;
+
+  @include media-breakpoint-up(md) {
+    background-color: $primary;
+  }
+
+  &-brand {
+    svg {
+      fill: $primary;
+
+      @include media-breakpoint-up(md) {
+        fill: $white;
+      }
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    background-color: $primary;
+  }
+}
+
+.nav {
+  &-primary {
+    background-color: $primary;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: $zindex-fixed;
+    @include nav-shadow;
+
+    @include media-breakpoint-up(md) {
+      position: static;
+      box-shadow: none;
+    }
+  }
+
+  &-item {
+    flex-grow: 1;
+    text-align: center;
+    flex-basis: 0;
+    //    position: relative;
+
+    @include media-breakpoint-up(md) {
+      flex-grow: 0;
+      margin-left: 2rem;
+      position: relative;
+
+      &:before,
+      &:after {
+        @include underline;
+        width: 0px;
+        height: 4px;
+        opacity: 0;
+      }
+
+      &:hover {
+
+        &:before,
+        &:after {
+          width: 100%;
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+
+  &-link {
+    color: inherit;
+    //    padding: .8rem;
+
+    &:hover {
+      color: inherit;
+    }
+  }
+}
+
+.material-icons {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
+  flex-direction: column;
+
+  @include media-breakpoint-up(md) {
+    display: none;
+  }
+}
+
+.navbar-nav {
+  flex-direction: row;
+
+  .active {
+    background-color: $primary-dark;
+
+    @include media-breakpoint-up(md) {
+      background-color: inherit;
+
+      &:before,
+      &:after {
+        width: 100%;
+        opacity: 1;
+      }
+    }
+  }
 }
 
 .social__item {
-  margin-left: 1.5rem;
+  padding: 1rem;
+  background-color: rgba(0, 0, 0, .4);
+
+  @include media-breakpoint-up(md) {
+    margin-left: .5rem;
+    padding: .5rem 1rem;
+    background-color: inherit;
+    @include transition(background-color .2s);
+
+    &:hover {
+      background-color: rgba(0, 0, 0, .2);
+    }
+  }
 }
 
 .social__icon {
   color: $white;
-  transition: $ease-in-out;
-
-  &:hover {
-    color: $primary-light;
-    transform: scale(1.25);
-  }
+  -webkit-tap-highlight-color: $accent;
 }

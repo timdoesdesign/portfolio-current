@@ -1,73 +1,87 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Lato&display=swap&family=Material+Icons');
 
-// General
 body {
   font-family: 'Nunito', sans-serif;
-  font-size: 1rem;
-  font-weight: 400;
-  color: $black;
+  letter-spacing: 1.05px;
 
-  @include screen-md {
+  @include media-breakpoint-up(md) {
     font-size: 1.25rem;
   }
 }
 
-h3 {
-  font-size: 1.25rem;
+h1,
+h2 {
+  font-family: 'Lato', sans-serif;
+}
 
-  @include screen-md {
-    font-size: 1.563rem;
+h3 {
+  @include media-breakpoint-only(xs) {
+    font-size: 1.5rem;
   }
 }
 
-strong {
-  color: $primary-dark;
+.subtitle {
+
+  &--home {
+    font-size: 1.75rem;
+
+    @include media-breakpoint-up(lg) {
+      font-size: 2.5rem;
+    }
+  }
 }
 
 // Header
-.nav__item {
-  font-size: 0.9rem;
+.nav-link {
+  font-size: .9rem;
+}
+
+.material-icons {
+  font-size: 18px;
 }
 
 .social__icon {
-  font-size: 1.5rem;
-}
+  font-size: 1.25rem;
 
-
-// Main
-.section__title {
-  font-size: 1.953rem;
-  font-weight: 400;
-
-  @include screen-lg {
-    font-size: 2.441rem;
-  }
-
-  &--intro {
-    font-size: 1.563rem;
-    font-weight: 400;
-
-    @include screen-sm {
-      font-size: 1.953rem;
-    }
-
-    @include screen-lg {
-      font-size: 3.052rem;
-    }
+  &--contact {
+    font-size: 2rem;
   }
 }
 
-.btn--projects {
-  @include screen-lg {
-    font-size: 1.563rem;
-  }
-}
-
-.skill__list {
+// Footer
+.footer {
   font-size: .9rem;
+}
 
-  @include screen-md {
-    font-size: 1rem;
+// Section Title
+.section__title {
+
+  @include media-breakpoint-up(md) {
+    font-size: 4rem;
+  }
+}
+
+
+// Intro section
+.intro {
+
+  &__lead {
+    font-size: 3rem;
+
+    @include media-breakpoint-up(md) {
+      font-size: 4rem;
+    }
+  }
+}
+
+// Skill section
+.skills {
+  font-size: 1rem;
+}
+
+.skill__title {
+  @include media-breakpoint-down(md) {
+    font-size: 1.25rem;
   }
 }
 
@@ -75,26 +89,50 @@ strong {
   font-size: 3rem;
 }
 
-.project__title {
+
+// Buttons
+.btn {
   font-size: 1.25rem;
 
-  @include screen-sm {
-    font-size: 1.953rem;
+  @include media-breakpoint-up(md) {
+    font-size: 1.5rem;
   }
 
-  @include screen-lg {
-    font-size: 3.052rem;
-  }
-}
-
-.project__link--back {
-  font-size: .9rem;
-  @include screen-lg {
-    font-size: 1rem;
+  &--submit {
+    font-size: 1.25rem !important;
   }
 }
 
-// Footer
-.footer__container {
+
+// Projects Page
+.project__title {
+  font-family: 'Nunito', sans-serif;
+  font-size: 1.5rem;
+
+  @include media-breakpoint-up(md) {
+    font-size: 2.5rem;
+  }
+}
+
+// Project Overview Page
+.project-link--back {
   font-size: .9rem;
+}
+
+.project-overview {
+  .section__title {
+    @include media-breakpoint-up(md) {
+      font-size: 3rem;
+    }
+  }
+}
+
+// Contact Page
+.contact {
+  h2 {
+    font-size: 1.75rem;
+  }
+}
+label {
+  font-size: 1rem;
 }

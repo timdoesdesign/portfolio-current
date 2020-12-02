@@ -1,0 +1,28 @@
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  list-style-type: none;
+}
+
+strong {
+  color: $primary;
+}
+
+img {
+  width: 100%;
+}
+
+a:hover {
+  text-decoration: none;
+}

@@ -1,0 +1,39 @@
+.skill {
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+
+    li {
+      padding: .25rem 0;
+      text-align: center;
+      flex-basis: 33.33%;
+
+      @include media-breakpoint-up(md) {
+        min-width: 7rem;
+      }
+
+      @include media-breakpoint-up(xl) {
+        flex-basis: auto;
+      }
+    }
+  }
+}
+
+@include skill(photoshop, #D9F5FF, #001523);
+@include skill(illustrator, #FF9200, #261300, );
+@include skill(adobe-xd, #FFD9F2, #2E001F, );
+@include skill(indesign, #FF6BAE, #2E0013, );
+@include skill(premiere, #EA77FF, #2A0034, );
+
+@include skill(html, #D1431F);
+@include skill(css, #144BCC);
+@include skill(javascript, #F0D91D, #424242);
+@include skill(sass, #C34B85);
+@include skill(less, #294D80);
+
+@include skill(bootstrap, #543B79);
+@include skill(foundation, #127DA1);
+
+@include skill(jquery, #075B97);
+@include skill(git, #D93717);
+@include skill(gulp, #CF4547);

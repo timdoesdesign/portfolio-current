@@ -1,48 +1,18 @@
 .footer {
-  background-color: $primary-grey;
+  background-color: $dark;
   color: $white;
+  text-align: center;
 
-  &__container {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    @include padding($top: 2rem, $bottom: 4rem);
-
-    @include screen-sm {
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: baseline;
-      padding: 2rem 1rem;
-    }
-
-    @include h-responsive-padding;
+  @include media-breakpoint-down(sm) {
+    padding-bottom: 4rem;
   }
 
-  &__copyright {
-
-    @include screen-sm {
-      order: -1;
-    }
-  }
-
-  // Social media text
   &__social-list {
-    display: flex;
     justify-content: space-evenly;
-    position: relative;
-    margin-bottom: 2rem;
-
-    @include IE {
-      justify-content: space-around;
-    }
-
-    @include screen-sm {
-      margin-bottom: 0;
-    }
   }
 
   &__social-item {
-    transition: $ease-in-out;
+    @include transition(all .25s ease-in-out);
     position: relative;
 
     &:before,
@@ -62,13 +32,33 @@
         opacity: 0;
       }
     }
-
-    @include screen-sm {
-      margin-left: 2rem;
-    }
   }
 
-  &__social-text {
-    color: $white;
+  a {
+    color: inherit;
+  }
+}
+
+/***********************
+  Sticky Footer
+************************/
+@include media-breakpoint-up(md) {
+
+  html,
+  body {
+    height: 100%;
+  }
+
+  body {
+    display: flex;
+    flex-direction: column;
+  }
+
+  main {
+    flex: 1 0 auto;
+  }
+
+  footer {
+    flex-shrink: 0;
   }
 }

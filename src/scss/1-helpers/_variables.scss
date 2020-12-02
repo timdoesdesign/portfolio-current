@@ -1,27 +1,7 @@
-// =================
-// Color Variables
-// =================
-
 $primary: #00614C;
-$primary-light: #C8FCEA;
-$primary-light-bg: #E4FFF6;
 $primary-dark: darken($primary, 5%);
-$primary-grey: #21312D;
+$primary-light: #C8FCEA;
 $secondary: #C2B1A4;
 $accent: #FCD1C7;
-$white: #fff;
-$black: #000;
 
-// Screen size variables
-$screen-xs-min: 425px;  // Tiny phones
-$screen-sm-min: 576px;  // Small tablets and large smartphones (landscape view)
-$screen-md-min: 768px;  // Small tablets (portrait view)
-$screen-lg-min: 992px;  // Tablets and small desktops
-$screen-xl-min: 1200px; // Large tablets and desktops
-
-
-// ======================
-// CSS Animations
-// ======================
-
-$ease-in-out: all .2s ease-in-out;
+$body-bg: #E9F9FB;

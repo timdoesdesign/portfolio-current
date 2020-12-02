@@ -1,25 +1,44 @@
 main {
-
-  @include screen-sm {
-    padding-top: 3.7rem;
+  @include media-breakpoint-up(md) {
+    padding-top: 3.6rem;
   }
+}
+
+h2 {
+  margin-bottom: 1.5rem;
+}
+
+section {
+  position: relative;
+  padding: 3rem 0;
 }
 
 .section__title {
-  @include margin($top: 1rem, $bottom: 1rem);
-}
+  text-align: center;
 
-.article__wrapper {
-  margin: auto;
-  padding: 1rem;
-  max-width: 800px;
-  @include h-responsive-padding;
-
-  @include screen-lg {
-    @include padding($left: 0, $right: 0);
+  @include media-breakpoint-up(lg) {
+    text-align: left;
   }
 
-  @include screen-xl {
-    @include padding($left: 0, $right: 0);
+  &--light {
+    color: rgba($white, .9);
+  }
+
+  &--dark {
+    color: rgba($black, .65);
+  }
+}
+
+.watermark {
+  display: none;
+  user-select: none;
+
+  @include media-breakpoint-up(lg) {
+    display: inline-block;
+    font-size: 10rem;
+    position: absolute;
+    top: -2.5rem;
+    left: -1.5rem;
+    opacity: .05;
   }
 }
